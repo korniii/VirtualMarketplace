@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.reutlingen-university.de/ontologies/ss16/VirtualMarketplace"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.reutlingen-university.de/ontologies/ss16/VirtualMarketplace">
+    <Prefix name="" IRI="http://www.reutlingen-university.de/ontologies/ss16/VirtualMarketplace"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <DataProperty IRI="#isOpenForAgents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FlascheCola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOwner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vendor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Naehmaschine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Offer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marketplace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBuyerOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#placedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgents"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSold"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#knownOffers"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProductId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVendor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isVendorOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Person1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProduct"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MainMarketplace"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Agent_47"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Purchase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOffer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBuyer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOfferId"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Buyer"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agent"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasOwner"/>
+            <Class IRI="#Person"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buyer"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buyer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isBuyerOf"/>
+            <Class IRI="#Purchase"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Offer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasProduct"/>
+            <Class IRI="#Product"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Offer"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasVendor"/>
+            <Class IRI="#Actor"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Purchase"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasBuyer"/>
+            <Class IRI="#Actor"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Purchase"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasOffer"/>
+            <Class IRI="#Offer"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vendor"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vendor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isVendorOf"/>
+            <Class IRI="#Offer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <Class IRI="#Marketplace"/>
+        <Class IRI="#Offer"/>
+        <Class IRI="#Product"/>
+        <Class IRI="#Purchase"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Person"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Agent"/>
+        <NamedIndividual IRI="#Agent_47"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Product"/>
+        <NamedIndividual IRI="#FlascheCola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Marketplace"/>
+        <NamedIndividual IRI="#MainMarketplace"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Product"/>
+        <NamedIndividual IRI="#Naehmaschine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Person1"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription"/>
+        <NamedIndividual IRI="#FlascheCola"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Flasche Cola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasProductId"/>
+        <NamedIndividual IRI="#FlascheCola"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1234</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription"/>
+        <NamedIndividual IRI="#Naehmaschine"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Naehmaschine</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasProductId"/>
+        <NamedIndividual IRI="#Naehmaschine"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1234</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAgents"/>
+        <ObjectProperty IRI="#hasOwner"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBuyer"/>
+        <ObjectProperty IRI="#isBuyerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasOffer"/>
+        <ObjectProperty IRI="#isSold"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProduct"/>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasVendor"/>
+        <ObjectProperty IRI="#isVendorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#knownOffers"/>
+        <ObjectProperty IRI="#placedAt"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBuyer"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasOffer"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasOwner"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasProduct"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasVendor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isSold"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAgents"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasBuyer"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasOffer"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasOwner"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasProduct"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasVendor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isBuyerOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isSold"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isVendorOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#knownOffers"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#placedAt"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAgents"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasBuyer"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasOffer"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasOwner"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasProduct"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasVendor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isBuyerOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isSold"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isVendorOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#knownOffers"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#placedAt"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgents"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBuyer"/>
+        <Class IRI="#Purchase"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOffer"/>
+        <Class IRI="#Purchase"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVendor"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBuyerOf"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOfferedAt"/>
+        <Class IRI="#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSold"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isVendorOf"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#knownOffers"/>
+        <Class IRI="#Marketplace"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#placedAt"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgents"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBuyer"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOffer"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProduct"/>
+        <Class IRI="#Product"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVendor"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBuyerOf"/>
+        <Class IRI="#Purchase"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOfferedAt"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSold"/>
+        <Class IRI="#Purchase"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isVendorOf"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#knownOffers"/>
+        <Class IRI="#Offer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#placedAt"/>
+        <Class IRI="#Marketplace"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOfferId"/>
+        <Class IRI="#Offer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrice"/>
+        <Class IRI="#Offer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasProductId"/>
+        <Class IRI="#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isOpenForAgents"/>
+        <Class IRI="#Offer"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasOfferId"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPrice"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasProductId"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isOpenForAgents"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
